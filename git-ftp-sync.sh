@@ -394,7 +394,7 @@ fi
 echo "Pushing files with git-ftp..."
 cmdln=(git ftp push --force --verbose
   --syncroot "${targetdir}" --remote-root "${INPUT_FTP_ROOT}"
-  --user "${INPUT_FTP_USER}" --passwd "${INPUT_FTP_PASS}" "ftp://${INPUT_FTP_HOST}")
+  --user "${INPUT_FTP_USER}" --passwd "${INPUT_FTP_PASS}" "sftp://${INPUT_FTP_HOST}:22")
 result="$("${cmdln[@]}" 2>&1)"
 retstat=${?}
 
