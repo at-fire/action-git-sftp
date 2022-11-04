@@ -392,7 +392,7 @@ if [ "$(pwd)" != "${orgwd}" ]; then
 fi
 
 echo "Pushing files with git-ftp..."
-cmdln=(git ftp push --force --verbose
+cmdln=(git ftp push --force --verbose --insecure
   --syncroot "${targetdir}" --remote-root "${INPUT_FTP_ROOT}"
   --user "${INPUT_FTP_USER}" --passwd "${INPUT_FTP_PASS}" "sftp://${INPUT_FTP_HOST}:22")
 result="$("${cmdln[@]}" 2>&1)"
